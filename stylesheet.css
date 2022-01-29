@@ -1,0 +1,248 @@
+@font-face {
+	font-family: Arkitech;
+	src: url("./fonts/arkitech.woff") format("woff");
+}
+*:not(input) {
+	user-select: none;
+}
+:root {
+	--color-primary: #522d80;
+	--color-accent: #002e63;
+}
+body {
+	color: #e6e6e6;
+	margin: 0 auto;
+}
+img {
+	-webkit-user-drag: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arkitech, sans-serif;
+	text-align: center;
+	letter-spacing: 1px;
+	line-height: 1.75rem;
+	margin-top: 0;
+}
+p {
+	font-family: sans-serif;
+}
+figure {
+	margin: 0;
+}
+header figure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 24px 12px 12px;
+}
+header figure img {
+	width: 120px;
+	height: auto;
+	filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+}
+header figure figcaption {
+	font-family: Arkitech, sans-serif;
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+	background: linear-gradient(90deg, #522d80, #002e63);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 1px #000;
+	-webkit-text-fill-color: transparent;
+}
+section div {
+	display: flex;
+	justify-content: center;
+}
+section div:first-of-type {
+	margin-bottom: -24px;
+}
+section div:last-of-type {
+	margin-top: -24px;
+}
+section div:nth-of-type(2) {
+	justify-content: space-between;
+}
+section div figure {
+	position: relative;
+}
+section div figure img {
+	object-fit: contain;
+	filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+}
+section div figure figcaption {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	font-size: 14px;
+	white-space: nowrap;
+	transform: translateX(-50%);
+	filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.75));
+}
+main {
+	padding: 80px 12px;
+	backdrop-filter: blur(10px);
+}
+main:first-of-type {
+	background-color: rgba(0,0,0,0.5);
+}
+main:last-of-type {
+	color: #333;
+	background-color: rgba(255,255,255,0.5);
+}
+main article {
+	margin: 0 auto;
+	max-width: 900px;
+}
+main article > div {
+	display: grid;
+	column-gap: 12px;
+	row-gap: 24px;
+	margin-top: 48px;
+}
+main article div figure {
+	position: relative;
+	transition: all 250ms ease-in-out;
+	text-align: center;
+	cursor: pointer;
+}
+main article div figure img {
+	width: calc(100% - 24px);
+	height: auto;
+	object-fit: contain;
+	border-radius: 8px;
+	transition: all 250ms ease-in-out;
+}
+main article div figure figcaption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	right: 0;
+	width: calc(100% - 24px);
+	padding: 12px 0;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255,255,255,0.1);
+	backdrop-filter: blur(10px);
+	font-size: 14px;
+	color: whitesmoke;
+	text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+	transition: all 250ms ease-in-out;
+}
+main article div figure figcaption span {
+	font-family: Orbitron, sans-serif;
+	letter-spacing: 2px;
+}
+main article div figure figcaption h4 {
+	font-family: Arkitech, sans-serif;
+	margin-top: 0;
+}
+main article div figure:hover img {
+	box-shadow: 0 0 10px 5px var(--color-primary);
+}
+main article div figure.inverted figcaption {
+	color: #333;
+	background-color: rgba(0,0,0,0.1);
+}
+main article div figure:hover figcaption {
+	width: calc(100% - 22px);
+	background-color: var(--color-primary);
+}
+main article div figure.inverted:hover figcaption {
+	color: whitesmoke;
+}
+main article p {
+	text-align: justify;
+	font-size: 16px;
+}
+main article strong {
+	font-family: Orbitron, sans-serif;
+	font-size: 18px;
+}
+main article h4 {
+	margin-top: 80px;
+}
+main aside {
+	display: grid;
+	text-align: center;
+}
+main aside span {
+	padding: 0 12px;
+}
+main aside span .emoji {
+	font-size: 4rem;
+	margin-bottom: 14px;
+}
+footer {
+	height: 400px;
+}
+#tsparticles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(#522d80, #002e63);
+	z-index: -1;
+}
+#tsparticles canvas {
+	position: unset !important;
+}
+.emoji {
+	font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Segoe UI Symbol", "Android Emoji", EmojiSymbols, "EmojiOne Mozilla" !important;
+	font-weight: 400 !important;
+}
+@media screen and (min-width: 415px) {
+	h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
+	section {
+		width: 340px;
+		margin: 96px auto 48px;
+	}
+	section figure img {
+		width: auto;
+		height: 100px;
+	}
+	main article div {
+		grid-template-columns: 33.333% 33.333% 33.333%;
+	}
+	main aside {
+		grid-template-columns: 33.333% 33.333% 33.333%;
+	}
+}
+@media screen and (max-width: 414px) {
+	h1 {
+		font-size: 1.75rem;
+	}
+	h2 {
+		font-size: 1.25rem;
+	}
+	h3 {
+		font-size: 1.15rem;
+	}
+	header figure img {
+		width: auto;
+		height: 80px;
+		object-fit: contain;
+	}
+	header figure figcaption {
+		font-size: 28px;
+	}
+	section {
+		width: 260px;
+		margin: 48px auto;
+	}
+	section figure img {
+		width: auto;
+		height: 80px;
+	}
+	main article div {
+		grid-template-columns: 50% 50%;
+	}
+}
