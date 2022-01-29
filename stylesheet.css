@@ -9,9 +9,18 @@
 	--color-primary: #522d80;
 	--color-accent: #002e63;
 }
+html, body {
+	position: fixed;
+	overflow: hidden;
+	top: env(safe-area-inset-top, 0);
+	bottom: env(safe-area-inset-bottom, 0);
+	left: 0;
+	right: 0;
+}
 body {
 	color: #e6e6e6;
 	margin: 0 auto;
+	overflow-y: auto;
 }
 img {
 	-webkit-user-drag: none;
@@ -218,13 +227,13 @@ footer {
 }
 @media screen and (max-width: 414px) {
 	h1 {
-		font-size: 1.75rem;
+		font-size: 1.5rem;
 	}
 	h2 {
-		font-size: 1.25rem;
+		font-size: 1.15rem;
 	}
 	h3 {
-		font-size: 1.15rem;
+		font-size: 1.rem;
 	}
 	header figure img {
 		width: auto;
