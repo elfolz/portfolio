@@ -9,19 +9,10 @@
 	--color-primary: #522d80;
 	--color-accent: #002e63;
 }
-html, body {
-	position: fixed;
-	overflow: hidden;
-	top: env(safe-area-inset-top, 0);
-	bottom: env(safe-area-inset-bottom, 0);
-	left: 0;
-	right: 0;
-}
 body {
 	font-family: sans-serif;
 	color: #e6e6e6;
 	margin: 0 auto;
-	overflow-y: auto;
 	--vh: 100vh;
 }
 img {
@@ -37,26 +28,54 @@ h1, h2, h3, h4, h5, h6 {
 figure {
 	margin: 0;
 }
+header {
+	transition: all 250ms ease-in-out;
+}
 header figure {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 24px 12px 12px;
+	margin: 12px;
 }
 header figure img {
-	width: 120px;
 	height: auto;
 	filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+	transition: all 250ms ease-in-out;
 }
 header figure figcaption {
 	font-family: Arkitech, sans-serif;
 	font-size: 48px;
 	font-weight: bold;
 	text-shadow: 0 5px 5px rgba(0,0,0,0.5);
-	background: linear-gradient(90deg, #522d80, #002e63);
-	-webkit-background-clip: text;
+	color: var(--color-primary);
 	-webkit-text-stroke: 1px #000;
-	-webkit-text-fill-color: transparent;
+	transition: all 250ms ease-in-out;
+}
+header.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	background-color: rgba(255,255,255,0.5);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 10px 10px rgba(0,0,0,0.25);
+}
+header.fixed.inverted {
+	background-color: rgb(0,0,0,0.65);
+}
+header.fixed figure img {
+	filter: none;
+}
+header.fixed figure figcaption {
+	text-shadow: none;
+	-webkit-text-stroke: unset;
+}
+header.fixed.inverted figure {
+	filter: drop-shadow(0px 0px 2px #fff);
+}
+header.fixed.inverted figure figcaption {
+	text-shadow: 0 0 1px #fff;
 }
 section div {
 	display: flex;
@@ -72,6 +91,7 @@ section div:nth-of-type(2) {
 	justify-content: space-between;
 }
 section div figure {
+	width: auto;
 	position: relative;
 }
 section div figure img {
@@ -94,7 +114,7 @@ main {
 	backdrop-filter: blur(10px);
 }
 main:first-of-type {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.25);
 }
 main:last-of-type {
 	color: #333;
@@ -221,12 +241,20 @@ footer {
 	h3 {
 		font-size: 1.2rem;
 	}
+	header figure img {
+		width: 120px;
+	}
+	header.fixed figure img {
+		width: 80px;
+	}
+	header.fixed figure figcaption {
+		font-size: 36px;
+	}
 	section {
 		width: 340px;
 		margin: 96px auto 48px;
 	}
-	section figure img {
-		width: auto;
+	section div figure img {
 		height: 100px;
 	}
 	main article div {
@@ -247,19 +275,23 @@ footer {
 		font-size: 1.rem;
 	}
 	header figure img {
-		width: auto;
-		height: 80px;
+		width: 80px;
 		object-fit: contain;
 	}
 	header figure figcaption {
 		font-size: 28px;
 	}
+	header.fixed figure img {
+		width: 60px;
+	}
+	header.fixed figure figcaption {
+		font-size: 22px;
+	}
 	section {
 		width: 260px;
 		margin: 48px auto;
 	}
-	section figure img {
-		width: auto;
+	section div figure img {
 		height: 80px;
 	}
 	main article div {
