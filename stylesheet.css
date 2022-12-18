@@ -194,9 +194,9 @@ main article p {
 	text-align: justify;
 }
 main article strong {
-	font-size: 1.5em;
+	font-size: 1.25em;
 }
-main article h3:last-of-type {
+main article > h3:last-of-type {
 	margin-top: 80px;
 }
 main aside {
