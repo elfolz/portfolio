@@ -7,18 +7,15 @@
 }
 :root {
 	--color-primary: #00ffbb;
-	--color-accent: #9370db;
+	--color-accent: #9664c8;
 }
 body {
 	font-family: "First Order", sans-serif;
 	color: #e6e6e6;
 	margin: 0 auto;
 	font-size: 20px;
+	background: linear-gradient(var(--color-primary), var(--color-accent));
 	--vh: 100vh;
-	background: url("img/bg.webp");
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
 }
 img {
 	-webkit-user-drag: none;
@@ -40,6 +37,7 @@ p strong {
 }
 header {
 	transition: all 250ms ease-in-out;
+	z-index: 3;
 }
 header figure {
 	display: flex;
@@ -57,8 +55,8 @@ header figure figcaption {
 	font-family: "First Order", sans-serif;
 	font-size: 4em;
 	font-weight: bold;
+	margin-left: 0.25em;
 	color: var(--color-primary);
-	-webkit-text-stroke: 1px #000;
 	transition: all 250ms ease-in-out;
 }
 header.fixed {
@@ -79,6 +77,9 @@ header.fixed figure img {
 }
 header.fixed figure figcaption {
 	-webkit-text-stroke: unset;
+}
+section {
+	z-index: 3;
 }
 section div {
 	display: flex;
@@ -115,6 +116,7 @@ section div figure figcaption {
 main {
 	padding: 80px 12px;
 	backdrop-filter: blur(10px);
+	z-index: 3;
 }
 main:first-of-type {
 	background-color: rgba(0,0,0,0.25);
@@ -212,6 +214,7 @@ main aside span .emoji {
 }
 footer {
 	height: 400px;
+	z-index: 3;
 }
 #tsparticles canvas {
 	position: unset !important;
