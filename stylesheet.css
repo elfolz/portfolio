@@ -14,7 +14,10 @@ body {
 	color: #e6e6e6;
 	margin: 0 auto;
 	font-size: 20px;
-	background: linear-gradient(var(--color-primary), var(--color-accent));
+	background: url("img/bg.webp");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	--vh: 100vh;
 }
 img {
@@ -37,7 +40,6 @@ p strong {
 }
 header {
 	transition: all 250ms ease-in-out;
-	z-index: 3;
 }
 header figure {
 	display: flex;
@@ -78,9 +80,6 @@ header.fixed figure img {
 header.fixed figure figcaption {
 	-webkit-text-stroke: unset;
 }
-section {
-	z-index: 3;
-}
 section div {
 	display: flex;
 	justify-content: center;
@@ -116,7 +115,6 @@ section div figure figcaption {
 main {
 	padding: 80px 12px;
 	backdrop-filter: blur(10px);
-	z-index: 3;
 }
 main:first-of-type {
 	background-color: rgba(0,0,0,0.25);
@@ -214,7 +212,6 @@ main aside span .emoji {
 }
 footer {
 	height: 400px;
-	z-index: 3;
 }
 #tsparticles canvas {
 	position: unset !important;
