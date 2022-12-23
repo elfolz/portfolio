@@ -1,7 +1,7 @@
 {
-	"name": "ETcétero",
-	"short_name": "ETcétero",
-	"theme_color": "#7851a9",
+	"name": "Elfolz",
+	"short_name": "Elfolz",
+	"theme_color": "#00cc99",
 	"icons": [
 			{ "src": "./img/icons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
 			{ "src": "./img/icons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" },
@@ -10,5 +10,5 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"background_color": "#7851a9"
+	"background_color": "#00cc99"
 }

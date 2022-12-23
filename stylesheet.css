@@ -14,7 +14,7 @@ body {
 	color: #e6e6e6;
 	margin: 0 auto;
 	font-size: 20px;
-	background: url("img/bg.webp");
+	background: url("img/bg.webp"), linear-gradient(var(--color-primary), var(--color-accent));
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -244,6 +244,7 @@ footer {
 		margin: 96px auto 48px;
 	}
 	section div figure img {
+		width: 100px;
 		height: 100px;
 	}
 	main article div {
@@ -281,6 +282,7 @@ footer {
 		margin: 48px auto;
 	}
 	section div figure img {
+		width: 80px;
 		height: 80px;
 	}
 	main article div {
