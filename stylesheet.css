@@ -90,7 +90,7 @@ header section article figure img {
 	height: 100%;
 	object-fit: cover;
 }
-header section article figure figcaption {
+header section article figure figcaption a {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -101,6 +101,7 @@ header section article figure figcaption {
 	text-align: left;
 	background: linear-gradient(transparent, rgba(255,255,255,0.75));
 	text-shadow: -1px -1px 2px #000, 1px 1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+	text-decoration: none;
 }
 header section article figure figcaption div:last-of-type {
 	font-size: .75em;
@@ -109,8 +110,9 @@ main {
 	padding: 0 .5em;
 }
 main section {
-	height: calc(75vh - 9em - 68px - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0));
+	height: calc(75vh - 9em - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0));
 	overflow-y: auto;
+	padding-bottom: calc(68px + env(safe-area-inset-bottom, 0));
 }
 main h2 {
 	margin: 0 0 .5em 0;
@@ -167,6 +169,7 @@ footer {
 	left: 0;
 	right: 0;
 	height: 56px;
+	backdrop-filter: blur(10px);
 }
 footer svg {
 	width: 40px;
@@ -193,7 +196,7 @@ footer svg:last-of-type {
 		background-color: #000;
 	}
 	footer {
-		background-color: #121212;
+		background-color: rgba(255,255,255,0.1);
 	}
 	main section article span h3 div:last-of-type {
 		color: rgba(255,255,255,0.55)
@@ -217,7 +220,7 @@ footer svg:last-of-type {
 		background-color: whitesmoke;
 	}
 	footer {
-		background-color: #e6e6e6;
+		background-color: rgba(0,0,0,0.1);
 	}
 	main section article span h3 div:last-of-type {
 		color: rgba(0,0,0,0.5);
