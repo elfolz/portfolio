@@ -2,6 +2,9 @@
 	font-family: "First Order";
 	src: url("./fonts/firstorder.woff") format("woff");
 }
+* {
+	box-sizing: border-box;
+}
 *:not(input) {
 	user-select: none;
 }
@@ -9,283 +12,222 @@
 	--color-primary: #00cc99;
 	--color-accent: #9966cc;
 }
-body {
-	font-family: "First Order", sans-serif;
-	color: #e6e6e6;
-	margin: 0 auto;
-	font-size: 20px;
-	background: url("img/bg.webp"), linear-gradient(var(--color-primary), var(--color-accent));
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	--vh: 100vh;
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-color);
+	border: none;
+	border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
 }
 img {
 	-webkit-user-drag: none;
 }
-h1, h2, h3, h4, h5, h6 {
-	text-align: center;
-	letter-spacing: 1px;
-	line-height: 1.75rem;
-	margin-top: 0;
-}
-figure {
-	margin: 0;
-}
-p {
-	font-family: sans-serif;
-}
-p strong {
-	font-family: "First Order", sans-serif;
-}
-header {
-	transition: all 250ms ease-in-out;
-}
-header figure {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 12px;
-	background: linear-gradient(180deg , #000, transparent);
-}
-header figure img {
-	height: auto;
-	filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
-	transition: all 250ms ease-in-out;
-}
-header figure figcaption {
-	font-family: "First Order", sans-serif;
-	font-size: 4em;
-	font-weight: bold;
-	margin-left: 0.25em;
-	color: var(--color-primary);
-	transition: all 250ms ease-in-out;
-}
-header.fixed {
+body {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 2;
-	background-color: rgba(255,255,255,0.5);
-	backdrop-filter: blur(10px);
-	box-shadow: 0 10px 10px rgba(0,0,0,0.25);
-}
-header.fixed.inverted {
-	background-color: rgb(0,0,0,0.65);
-}
-header.fixed figure img {
-	filter: none;
-}
-header.fixed figure figcaption {
-	-webkit-text-stroke: unset;
-}
-section div {
-	display: flex;
-	justify-content: center;
-}
-section div:first-of-type {
-	margin-bottom: -24px;
-}
-section div:last-of-type {
-	margin-top: -24px;
-}
-section div:nth-of-type(2) {
-	justify-content: space-between;
-}
-section div figure {
-	width: auto;
-	position: relative;
-}
-section div figure img {
-	object-fit: contain;
-	filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
-}
-section div figure figcaption {
-	position: absolute;
-	top: -28px;
-	left: 50%;
-	font-size: 1em;
-	letter-spacing: 2px;
-	white-space: nowrap;
+	bottom: 0;
+	font-size: 20px;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 500px;
 	font-family: sans-serif;
-	transform: translateX(-50%);
-	filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.75));
+}
+hr {
+	margin: 1em .5em .25em .5em;
+	border: 1px solid var(--color-text);
+}
+header {
+	padding: 0 .5em;
+	position: relative;
+	margin-top: calc(env(safe-area-inset-top, 0) + 2em)
+}
+header > img {
+	position: absolute;
+	top: 0;
+	right: .5em;
+	width: 64px;
+	height: 64px;
+}
+header h1 {
+	font-family: "First Order", sans-serif;
+	font-size: 3em;
+	margin: 0 0 .25em 0;
+	background: -webkit-linear-gradient(45deg, var(--color-primary), var(--color-accent) 50%);
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header section {
+	width: 100%;
+	height: 25vh;
+	text-align: center;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding-bottom: 8px;
+}
+header section article {
+	display: flex;
+	width: fit-content;
+	height: 100%;
+}
+header section article figure {
+	position: relative;
+	display: inline-block;
+	width: calc(100vw - 2em);
+	height: 100%;
+	margin: 0 .5em;
+	overflow: hidden;
+	border-radius: 6px;
+}
+header section article figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+header section article figure figcaption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: var(--color-primary);
+	padding: .25em;
+	font-size: 1.25em;
+	text-align: left;
+	background: linear-gradient(transparent, rgba(255,255,255,0.75));
+	text-shadow: -1px -1px 2px #000, 1px 1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+}
+header section article figure figcaption div:last-of-type {
+	font-size: .75em;
 }
 main {
-	padding: 80px 12px;
-	backdrop-filter: blur(10px);
+	padding: 0 .5em;
 }
-main:first-of-type {
-	background-color: rgba(0,0,0,0.25);
+main section {
+	height: calc(75vh - 9em - 68px - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0));
+	overflow-y: auto;
 }
-main:last-of-type {
-	color: #333;
-	background-color: rgba(255,255,255,0.5);
-}
-main article {
-	margin: 0 auto;
-	max-width: 900px;
-}
-main article > div {
-	display: grid;
-	column-gap: 12px;
-	row-gap: 24px;
-	margin-top: 48px;
-}
-main article div figure {
-	position: relative;
-	transition: all 250ms ease-in-out;
-	text-align: center;
-	cursor: pointer;
-}
-main article div figure img {
-	width: calc(100% - 24px);
-	height: auto;
-	object-fit: contain;
-	border-radius: 8px;
-	transition: all 250ms ease-in-out;
-}
-main article div figure figcaption {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	right: 0;
-	width: calc(100% - 24px);
-	height: 98px;
-	padding: 12px 0;
-	transform: translateX(-50%);
-	background-color: rgba(255,255,255,0.1);
-	backdrop-filter: blur(10px);
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
+main h2 {
+	margin: 0 0 .5em 0;
 	font-size: 1em;
-	color: whitesmoke;
-	transition: all 250ms ease-in-out;
+	font-weight: 500;
 }
-main article div figure figcaption h3 {
-	margin-bottom: 0;
-}
-main article div figure figcaption span {
-	font-family: sans-serif;
-	font-size: .75em;
+main section article {
+	display: flex;
+	align-items: center;
 	width: 100%;
-	letter-spacing: 2px;
+	height: 92px;
 }
-main article div figure:hover img {
-	box-shadow: 0 0 10px 5px var(--color-accent);
+main section article img {
+	min-width: 64px;
+	max-width: 64px;
+	height: 64px;
+	border-radius: 12px;
+	margin: .5em .5em .5em 0;
 }
-main article div figure.inverted figcaption {
-	color: #333;
-	background-color: rgba(0,0,0,0.1);
+main section article span {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border-bottom: 1px solid var(--color-text);
 }
-main article div figure:hover figcaption {
-	width: calc(100% - 22px);
-	background-color: var(--color-accent);
+main section article span h3 {
+	font-size: .75em;
+	font-weight: normal;
+	text-align: left;
+	margin-right: .5em;
 }
-main article div figure.inverted:hover figcaption {
-	color: whitesmoke;
+main section article span h3 div:first-of-type {
+	font-weight: 500;
+	margin-bottom: .25em;
 }
-main article p {
-	text-align: justify;
-}
-main article strong {
-	font-size: 1.25em;
-}
-main article > h3:last-of-type {
-	margin-top: 80px;
-}
-main aside {
-	display: grid;
-	text-align: center;
-}
-main aside span {
-	padding: 0 12px;
-}
-main aside span .emoji {
-	font-size: 4rem;
-	margin-bottom: 14px;
+main section article a {
+	height: fit-content;
+	border: none;
+	margin-left: auto;
+	background-color: #e5e5e5;
+	border-radius: 16px;
+	padding: .5em 1em;
+	color: var(--color-primary);
+	font-size: .75em;
+	font-weight: bold;
+	text-decoration: none;
 }
 footer {
-	height: 400px;
+	position: absolute;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	bottom: env(safe-area-inset-bottom, 0);
+	left: 0;
+	right: 0;
+	height: 56px;
 }
-#tsparticles canvas {
-	position: unset !important;
+footer svg {
+	width: 40px;
+	height: 40px;
 }
-.emoji {
-	font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Segoe UI Symbol", "Android Emoji", EmojiSymbols, "EmojiOne Mozilla" !important;
-	font-weight: 400 !important;
+footer svg:last-of-type {
+	width: 34px;
+	height: 34px;
+	border-radius: 4px;
+  overflow: hidden;
 }
-@media screen and (min-width: 415px) {
-	h1 {
-		font-size: 3em;
+@media (prefers-color-scheme: dark) {
+	::-webkit-scrollbar-thumb {
+		background: rgba(255,255,255,0.1);
 	}
-	h2 {
-		font-size: 1.75em;
+	::-webkit-scrollbar-thumb:hover {
+		background: rgba(255,255,255,0.2);
 	}
-	h3 {
-		font-size: 1.35em;
+	html {
+		--color-text: rgba(255,255,255,0.5);
 	}
-	header figure img {
-		width: 120px;
+	body {
+		color: #e6e6e6;
+		background-color: #000;
 	}
-	header.fixed figure img {
-		width: 80px;
+	footer {
+		background-color: #121212;
 	}
-	header.fixed figure figcaption {
-		font-size: 3em;
+	main section article span h3 div:last-of-type {
+		color: rgba(255,255,255,0.55)
 	}
-	section {
-		width: 340px;
-		margin: 96px auto 48px;
-	}
-	section div figure img {
-		width: 100px;
-		height: 100px;
-	}
-	main article div {
-		grid-template-columns: 33.333% 33.333% 33.333%;
-	}
-	main aside {
-		grid-template-columns: 33.333% 33.333% 33.333%;
+	footer svg {
+		fill: #e6e6e6;
 	}
 }
-@media screen and (max-width: 414px) {
-	h1 {
-		font-size: 1.9em;
+@media (prefers-color-scheme: light) {
+	::-webkit-scrollbar-thumb {
+		background: rgba(0,0,0,0.1);
 	}
-	h2 {
-		font-size: 1.1em;
+	::-webkit-scrollbar-thumb:hover {
+		background: rgba(0,0,0,0.2);
 	}
-	h3 {
-		font-size: 1.1em;
+	html {
+		--color-text: rgba(0,0,0,,0.25);
 	}
-	header figure img {
-		width: 80px;
-		object-fit: contain;
+	body {
+		color: #333;
+		background-color: whitesmoke;
 	}
-	header figure figcaption {
-		font-size: 2.75em;
+	footer {
+		background-color: #e6e6e6;
 	}
-	header.fixed figure img {
-		width: 60px;
+	main section article span h3 div:last-of-type {
+		color: rgba(0,0,0,0.5);
 	}
-	header.fixed figure figcaption {
-		font-size: 2.25em;
+	footer svg {
+		fill: #333;
 	}
-	section {
-		width: 260px;
-		margin: 48px auto;
-	}
-	section div figure img {
-		width: 80px;
-		height: 80px;
-	}
-	main article div {
-		grid-template-columns: 50% 50%;
+}
+@media screen and (min-width: 501px) {
+	header section article figure {
+		max-width: calc(500px - 2em) !important;
 	}
 }
