@@ -99,12 +99,17 @@ header section article figure figcaption a {
 	padding: .25em;
 	font-size: 1.25em;
 	text-align: left;
-	background: linear-gradient(transparent, rgba(255,255,255,0.75));
-	text-shadow: -1px -1px 2px #000, 1px 1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
 	text-decoration: none;
+	background-color: linear-gradient(transparent, rgba(255,255,255,0.75));
+	text-shadow: -1px -1px 2px #000, 1px 1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 header section article figure figcaption div:last-of-type {
 	font-size: .75em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 main {
 	padding: 0 .5em;
