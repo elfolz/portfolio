@@ -1,4 +1,12 @@
-navigator.serviceWorker?.register('service-worker.js')
+navigator.serviceWorker?.register('service-worker.js').then(reg => {
+	reg.addEventListener('updatefound', () => {
+		let newWorker = reg.installing
+		newWorker?.addEventListener('statechange', () => {
+			console.log('Update Installed. Restarting...')
+			if (newWorker.state == 'activated') location.reload(true)
+		})
+	})
+})
 
 refreshPageSize = () => {
 	let isStandalone = window.matchMedia('(display-mode: standalone)').matches
