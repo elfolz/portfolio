@@ -1,8 +1,8 @@
-navigator.serviceWorker?.register('service-worker.js')
+/* navigator.serviceWorker?.register('service-worker.js')
 navigator.serviceWorker.onmessage = m => {
 	console.info('Update found!')
 	if (m?.data == 'update') location.reload(true)
-}
+} */
 
 refreshPageSize = () => {
 	let isStandalone = window.matchMedia('(display-mode: standalone)').matches
