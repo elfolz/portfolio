@@ -4,7 +4,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
 	event.respondWith(caches.open('Elfolz').then(cache => {
-		return cache.match(event.request)
+		cache.match(event.request)
 		.then(cachedResponse => {
 			const cachedFile = cachedResponse.clone().blob()
 			const fetchedResponse = fetch(event.request)
@@ -24,6 +24,9 @@ self.addEventListener('fetch', event => {
 				return networkResponse
 			})
 			return cachedResponse || fetchedResponse
+		})
+		.catch(() => {
+			return fetch(event.request)
 		})
 	}))
 })
