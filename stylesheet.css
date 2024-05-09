@@ -9,6 +9,7 @@
 	user-select: none;
 }
 :root {
+	font-family: sans-serif;
 	--color-primary: #00cc99;
 	--color-accent: #9966cc;
 }
